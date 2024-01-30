@@ -1,10 +1,5 @@
 #Social Media App named "Chello" for Creators and Fans, built using React and Django
-
-# vs code shortcuts
-ctrl + B - sidebar display
-ctrl + `` - toggle display
-ctlr + p - open menu and find files
-ctrl + ^/
+#Project is currently under development
 
 # Next steps:
 -> Authentication using Json Web Tokens and Login, Sign Up Form and Validation
@@ -23,5 +18,4 @@ ctrl + ^/
 -> Code cleaning backend 
 -> Adding Tests
 # Final Steps
--> Learning AWS and deployment 
--> Deployment frontend and api
+->Deployment
