@@ -16,10 +16,11 @@ class HomeView(APIView):
     def get(self, request):
         content = {'message': 'Hello, World!'}
         return Response(content)
+
     
 class LogOutView(APIView):
-    permission_classes = (IsAuthenticated,)
-    def get(self, request):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
         try:
             refresh_token = request.data["refresh_token"]
             token = RefreshToken(refresh_token)
@@ -27,6 +28,7 @@ class LogOutView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+        
 @api_view(['POST'])
 def create_post(request):
     text = request.data.get('text')
@@ -65,22 +67,3 @@ def get_posts(request):
     post_serializer = PostSerializer(posts, many=True)
     return Response(post_serializer.data)
 
-@api_view(['POST'])
-def login(request):
-    if request.method == 'POST':
-        email = request.data.get('email')
-        password = request.data.get('password')
-        print("EMAIL",email)
-        print("PASSWORD",password)
-        user = User.objects.filter(email=email).first()
-        if user:
-            authenticated_user = authenticate(request,username=user.username, password=password)
-            if authenticated_user is not None:
-                token, created = Token.objects.get_or_create(user=user)
-                return Response({'message': 'Login successful', 'token': token.key})
-            else:
-                return Response({'message': 'Login failed'})
-        else:
-            return Response({'message': 'No User with this email found'})
-    else:
-        return Response({'message': 'Login failed'})

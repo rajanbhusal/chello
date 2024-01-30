@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AudioUpload from "../Project/AudioUpload";
 import { AppStateProvider } from "../shared/contextAPI/toggle";
 import Login from "../Project/Login";
+import { Logout } from "../Project/Logout";
 
 const App = () => (
     <Router>
@@ -16,6 +17,7 @@ const App = () => (
             <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/logout" element={<Logout />} />
             </Routes>
         </AppStateProvider>
     </Router>

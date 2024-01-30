@@ -10,6 +10,8 @@ import Messages from '../../App/assets/images/Icons/charm_messages.png'
 import More from '../../App/assets/images/Icons/More.png'
 import Card from '../../App/assets/images/Icons/ic_twotone-add-card.png'
 
+
+const token = localStorage.getItem('access_token');
 const menuItems = [
     {
         id: uuidv4(),
@@ -62,7 +64,7 @@ const menuItems = [
   
     {
         id: uuidv4(),
-        title: 'My Profile',
+        title: token ? 'My Profile' : 'Login',
         icon: User,
         //link: '/user'
     },

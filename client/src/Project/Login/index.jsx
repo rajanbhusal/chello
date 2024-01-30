@@ -23,14 +23,13 @@ const Login = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                withCredentials: true,
             });
             console.log("Data:", data);
             localStorage.clear();
             localStorage.setItem("access_token", data.access);
             localStorage.setItem("refresh_token", data.refresh);
             axios.defaults.headers.common['Authorization'] = `Bearer ${data.access}`;
-            navigate("/");
+            window.location.href = "/";
         } catch (error) {
             console.error("Axios Error:", error);
         }
