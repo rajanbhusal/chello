@@ -1,0 +1,7 @@
+Django==4.2.1
+djangorestframework==3.14.0
+django-cors-headers==4.0.0
+psycopg2-binary # If you use PostgreSQL
+djangorestframework-simplejwt==5.3.1
+# djangosimplejwt # If you plan for JWT authentication
+# Add any other specific Django packages your project uses
