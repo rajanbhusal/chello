@@ -96,7 +96,7 @@ const Create= () => {
         }
         if (text || photo || video || audio) {
             try{
-                const response = await axios.post("https://probable-orbit-v7qxwqppgqhxqr9-8000.app.github.dev/create_post/", formData, {
+                const response = await axios.post("https://bookish-sniffle-55rj96vp6w4fvqj6-8000.app.github.dev/create_post/", formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },
