@@ -14,7 +14,7 @@ import axios from "axios";
 const Feed = () => {
     const [postData, setPostData] = useState(null);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/get_posts/")
+        axios.get("https://bookish-sniffle-55rj96vp6w4fvqj6-8000.app.github.dev/get_posts/")
             .then((response) => {
                 setPostData(response.data);
             })
